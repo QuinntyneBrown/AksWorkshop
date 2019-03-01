@@ -5,19 +5,22 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using BeerBook.Web.Models;
+using BeerBook.Web.Clients;
 
 namespace BeerBook.Web.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        private readonly ICatalogClient _catalogClient;
+        public HomeController(ICatalogClient catalogClient)
         {
-            return View();
+            _catalogClient = catalogClient;
         }
 
-        public IActionResult Privacy()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var data = await _catalogClient.GetBeers(1);
+            return View(data);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
