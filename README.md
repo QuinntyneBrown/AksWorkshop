@@ -1,7 +1,7 @@
 # Introduction 
 AKS workshop demo files. Master branch has final code. Go to specific TAG to find "starting points for the lab"
 
-## Tag 00-Start (From docker to k8s)
+## Tag 00-Start
 
 Contains startup code: apis + web + compose.
 
@@ -15,7 +15,7 @@ Contains startup code: apis + web + compose.
 4. Create the YAML files and deploy on AKS
 5. Test it!
 
-## Tag 01-script-v1 (Exposing services through ingress)
+## Tag 01-scripts-v1
 
 Contains the basic scripts to deploy everything on Kubernetes, using `LoadBalancer` service to expose the web.
 
@@ -26,7 +26,7 @@ Contains the basic scripts to deploy everything on Kubernetes, using `LoadBalanc
 1. Add ingress YAML file, using Http addon host value
 2. Take care about base path issues
 
-## Tag 02-Ingress (Enable SSL)
+## Tag 02-Ingress
 
 Contains the ingress definitions and services adapted to honour base path. 
 
@@ -42,7 +42,7 @@ Contains the ingress definitions and services adapted to honour base path.
 6. Update ingress to use new certificate
 7. Verify site works on https with no issues 
 
-## Tag 03-SSL (Using Helm)
+## Tag 03-SSL
 
 Contains the SSL setup (using staging certs)
 
@@ -53,4 +53,13 @@ Contains the SSL setup (using staging certs)
 1. Create helm charts for every service
 2. Deploy them all
 
+## Tag 04-Helm.
 
+Contains the Helm charts
+
+**Goal** Integrate with ACR with no need to use `imagePullSecrets`
+
+**Steps**
+
+1. Link _service principal_ to ACR and to _service account_
+2. Use the service account to run the pods

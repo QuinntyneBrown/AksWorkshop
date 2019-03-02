@@ -22,6 +22,7 @@ spec:
         app: {{ template "aw-basket.name" . }}
         release: {{ .Release.Name }}
     spec:
+      serviceAccountName: {{ .Values.acrAccount }}
       {{ if .Values.imagePullSecrets -}}
       imagePullSecrets:
       {{ range .Values.imagePullSecrets -}}
