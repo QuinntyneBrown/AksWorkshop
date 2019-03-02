@@ -38,9 +38,19 @@ Contains the ingress definitions and services adapted to honour base path.
 2. Generate a issuer & certificate using let's encrypt staging
 3. Update ingress definition to enable TLS
 4. Verify https endpoints have let's encrypt staging cert
-5. Generate a issuer & certificate using let's encrypt prod
+5. Generate a issuer & certificate using let's encrypt prod (**Note**: That can fail due to Let's Encrypt limits)
 6. Update ingress to use new certificate
-7. Verify site works on https with no issues
+7. Verify site works on https with no issues 
 
+## Tag 03-SSL (Using Helm)
+
+Contains the SSL setup (using staging certs)
+
+**Goal** Change the scripts to use Helm charts instead of YAML files
+
+**Steps**
+
+1. Create helm charts for every service
+2. Deploy them all
 
 
