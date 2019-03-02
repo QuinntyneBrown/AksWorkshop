@@ -16,6 +16,8 @@ spec:
         env:
         - name: constr
           value: mongodb://mongo
+        - name: PATH_BASE
+          value: /basket-api
         ports:
         - containerPort: 80
       imagePullSecrets:
@@ -31,6 +33,7 @@ metadata:
 spec:
   ports:
   - port: 80
+    name: http
   selector:
     app: aksworksop
     component: basket

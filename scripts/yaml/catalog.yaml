@@ -16,6 +16,8 @@ spec:
         env:
         - name: constr
           value: Server=sql;Database=beerbook-basket;User Id=sa;Password=Pass@word1
+        - name: PATH_BASE
+          value: /catalog-api
         ports:
         - containerPort: 80
       imagePullSecrets:
@@ -31,6 +33,7 @@ metadata:
 spec:
   ports:
   - port: 80
+    name: http
   selector:
     app: aksworksop
     component: catalog
