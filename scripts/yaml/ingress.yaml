@@ -9,6 +9,10 @@ metadata:
     ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
+  tls:
+    - hosts:
+        - bf64e230a4fd4169aba0.westeurope.aksapp.io
+      secretName: cert-letsencrypt-staging
   rules:
     - host: bf64e230a4fd4169aba0.westeurope.aksapp.io
       http:

@@ -1,0 +1,22 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: cert-prod
+  namespace: default
+  environment: prod
+  app: aksworkshop
+spec:
+  secretName: cert-letsencrypt-prod
+  issuerRef:
+    name: letsencrypt-prod
+    environment: prod
+    app: aksworkshop
+  commonName: bf64e230a4fd4169aba0.westeurope.aksapp.io
+  dnsNames:
+  - bf64e230a4fd4169aba0.westeurope.aksapp.io
+  acme:
+    config:
+    - http01:
+        ingressClass: addon-http-application-routing
+      domains:
+      - bf64e230a4fd4169aba0.westeurope.aksapp.io

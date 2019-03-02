@@ -1,7 +1,7 @@
 # Introduction 
-AKS workshop demo files. Master branch has final code. Go to specific TAG to find "starting points"
+AKS workshop demo files. Master branch has final code. Go to specific TAG to find "starting points for the lab"
 
-## Tag 00-Start
+## Tag 00-Start (From docker to k8s)
 
 Contains startup code: apis + web + compose.
 
@@ -15,7 +15,7 @@ Contains startup code: apis + web + compose.
 4. Create the YAML files and deploy on AKS
 5. Test it!
 
-## Tag 01-script-v1
+## Tag 01-script-v1 (Exposing services through ingress)
 
 Contains the basic scripts to deploy everything on Kubernetes, using `LoadBalancer` service to expose the web.
 
@@ -25,6 +25,22 @@ Contains the basic scripts to deploy everything on Kubernetes, using `LoadBalanc
 
 1. Add ingress YAML file, using Http addon host value
 2. Take care about base path issues
+
+## Tag 02-Ingress (Enable SSL)
+
+Contains the ingress definitions and services adapted to honour base path. 
+
+**Goal**: Enable SSL through cert-manager
+
+**Steps**
+
+1. Install tiller on cluster & use helm to install cert-manager
+2. Generate a issuer & certificate using let's encrypt staging
+3. Update ingress definition to enable TLS
+4. Verify https endpoints have let's encrypt staging cert
+5. Generate a issuer & certificate using let's encrypt prod
+6. Update ingress to use new certificate
+7. Verify site works on https with no issues
 
 
 

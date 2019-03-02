@@ -1,0 +1,22 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: cert-staging
+  namespace: default
+  environment: staging
+  app: aksworkshop
+spec:
+  secretName: cert-letsencrypt-staging
+  issuerRef:
+    name: letsencrypt-staging
+    environment: staging
+    app: aksworkshop
+  commonName: bf64e230a4fd4169aba0.westeurope.aksapp.io
+  dnsNames:
+  - bf64e230a4fd4169aba0.westeurope.aksapp.io
+  acme:
+    config:
+    - http01:
+        ingressClass: addon-http-application-routing
+      domains:
+      - bf64e230a4fd4169aba0.westeurope.aksapp.io
