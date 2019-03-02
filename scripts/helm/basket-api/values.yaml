@@ -22,7 +22,7 @@ tolerations: []
 affinity: {}
 
 env:
-  configmap:
+  secretmap:
     - name: constr
   values:
     - name: PATH_BASE

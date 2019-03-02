@@ -62,4 +62,15 @@ Contains the Helm charts
 **Steps**
 
 1. Link _service principal_ to ACR and to _service account_
-2. Use the service account to run the pods
+2. Use the service account to run the pods (update helm charts)
+
+## Tag 05-acr-sa
+
+Contains the ACR and sa scripts & helm charts updated
+
+**Goal** Use k8s secrets fot storing constr instead of standard configmaps
+
+1. Update helm charts to use secrets
+2. Redeploy
+
+
