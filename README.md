@@ -73,4 +73,14 @@ Contains the ACR and sa scripts & helm charts updated
 1. Update helm charts to use secrets
 2. Redeploy
 
+## Tag 06-k8s-secrets
+
+Contains using k8s secrets instead of configmaps
+
+**Goal** Do a real secret management using Azure Key Vault
+
+1. Update helm charts to remove the secrets
+2. Create a key vault
+3. Mount volumes from key vault
+4. Update code to read volumes
 
