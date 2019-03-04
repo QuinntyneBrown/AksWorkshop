@@ -84,3 +84,14 @@ Contains using k8s secrets instead of configmaps
 3. Mount volumes from key vault
 4. Update code to read volumes
 
+## Tag 07-Keyvault
+
+Contains KeyVault scripts & updated code
+
+**Goal** Set HPA scalability
+
+1. Update helm charts to put pod limits
+2. Add HPA scripts
+
+
+

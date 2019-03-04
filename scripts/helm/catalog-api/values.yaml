@@ -13,7 +13,11 @@ service:
 ingress:
   enabled: true
 
-resources: {}
+resources:
+  requests:
+    cpu: "200m"
+  limits:
+    cpu: "400m"
 
 nodeSelector: {}
 
