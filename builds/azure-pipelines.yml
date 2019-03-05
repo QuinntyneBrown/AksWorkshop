@@ -26,4 +26,11 @@ steps:
     projectName: ""
     qualifyImageNames: true
     additionalImageTags: $(Build.BuildId)
-
+- task: CopyFiles@2
+  inputs:
+    sourceFolder: /scripts    
+    targetFolder: $(Build.ArtifactStagingDirectory)/scripts
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathtoPublish: $(Build.ArtifactStagingDirectory)/scripts
+    artifactName: scripts
