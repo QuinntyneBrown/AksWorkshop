@@ -103,6 +103,19 @@ Contains HPA scripts & charts updated to use CPU pod limits
 2. Add a new secret to access ACR (ACR auth must be enabled)
 4. Update helm charts (avoid using Key Vault and ACR _service account_ as is not supported)
 
+## Tag 09-vnodes
+
+Contains vnodes adapted config
+
+This tag is a dead-end. Once vnodes are deployed, just use Tag `10-revert-vnodes` as a new start
+
+## Tag 10-revert-vnodes
+
+Contains a valid setup, ready for Azure Devops
+
+Goal: Create an Azure Devops pipeline
+
+
 
 
 
