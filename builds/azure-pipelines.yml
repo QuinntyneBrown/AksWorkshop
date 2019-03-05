@@ -1,7 +1,7 @@
 pool:
   vmImage: 'ubuntu-16.04'
 variables:
-    azureContainerRegistry: testeduttacr
+    azureContainerRegistry: testeduttacr.azurecr.io
     azureSubscriptionEndpoint: aksworkshop-tt
 steps:
 - task: DockerCompose@0
@@ -13,6 +13,7 @@ steps:
     azureContainerRegistry: $(azureContainerRegistry)
     dockerComposeFile: src/docker-compose.yml
     qualifyImageNames: true
+    projectName: ""
     additionalImageTags: $(Build.BuildId)
 - task: DockerCompose@0
   displayName: Compose push
