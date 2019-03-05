@@ -18,10 +18,11 @@ steps:
   displayName: Compose push
   inputs:
     action: Push services
+    containerregistrytype: Azure Container Registry
     azureSubscriptionEndpoint: $(azureSubscriptionEndpoint)
     azureContainerRegistry: $(azureContainerRegistry)
     dockerComposeFile: src/docker-compose.yml
-    projectName: $(Build.Repository.Name)
+    projectName: ""
     qualifyImageNames: true
     additionalImageTags: $(Build.BuildId)
 
