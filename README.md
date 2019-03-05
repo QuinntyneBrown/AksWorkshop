@@ -93,5 +93,17 @@ Contains KeyVault scripts & updated code
 1. Update helm charts to put pod limits
 2. Add HPA scripts
 
+## Tag 08-hpa
+
+Contains HPA scripts & charts updated to use CPU pod limits
+
+**Goal** Use virtual nodes
+
+1. Create a AKS with virtual nodes enabled
+2. Add a new secret to access ACR (ACR auth must be enabled)
+4. Update helm charts (avoid using Key Vault and ACR _service account_ as is not supported)
+
+
+
 
 

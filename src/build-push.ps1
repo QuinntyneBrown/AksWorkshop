@@ -27,14 +27,15 @@ $password = $credentials.passwords[0].value
 Write-Host "Credentials of ACR $acrName are $username with pwd $password" -ForegroundColor Green
 docker login $loginServer -u $username -p $password
 
+
+$Env:TAG=$tag
+$Env:REGISTRY=$loginServer
 if ($build -eq $true) {
     Write-Host "Doing a docker build" -ForegroundColor Green
     docker-compose build
 }
 
 Write-Host "Doing the push using compose" -ForegroundColor Green
-$Env:TAG=$tag
-$Env:REGISTRY=$loginServer
 docker-compose push
 Write-Host "Push complete!" -ForegroundColor Green
 
