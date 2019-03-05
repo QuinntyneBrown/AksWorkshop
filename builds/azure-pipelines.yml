@@ -28,7 +28,7 @@ steps:
     additionalImageTags: $(Build.BuildId)
 - task: CopyFiles@2
   inputs:
-    sourceFolder: /scripts    
+    sourceFolder: $(Build.SourcesDirectory)/scripts    
     targetFolder: $(Build.ArtifactStagingDirectory)/scripts
 - task: PublishBuildArtifacts@1
   inputs:
