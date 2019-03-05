@@ -1,6 +1,5 @@
 basket:
-#  constr:  mongodb://mongo
-  constr: mongodb://10.0.92.254
+  constr:  mongodb://mongo
 order:
   constr: Server=sql;Database=beerbook-order;User Id=sa;Password=Pass@word1
 catalog:

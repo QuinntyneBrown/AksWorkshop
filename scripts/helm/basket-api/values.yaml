@@ -6,26 +6,12 @@ image:
   tag: latest
   pullPolicy: Always
 
-imagePullSecrets:
-  - name: acr-loginpwd
-
 service:
   type: ClusterIP
   port: 80
 
 ingress:
   enabled: true
-
-nodeSelector:
-  kubernetes.io/role: agent
-  beta.kubernetes.io/os: linux
-  type: virtual-kubelet
-
-tolerations:
-- key: virtual-kubelet.io/provider
-  operator: Exists
-- key: azure.com/aci
-  effect: NoSchedule
 
 affinity: {}
 
@@ -35,4 +21,8 @@ env:
       value: /basket-api
   secretmap:
     - name: constr
+
+keyVault:
+  secrets: basketconstr
+  secretsTypes: secret
 
